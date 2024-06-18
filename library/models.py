@@ -5,7 +5,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     name = models.CharField(max_length=100)
-    authors = models.ManyToManyField(Author, through='AuthorsBooks')
+    authors = models.ManyToManyField(Author, blank=True)
 
 class AuthorsBooks(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
